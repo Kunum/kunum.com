@@ -1,0 +1,456 @@
+:root{
+    --c1: #2D3FA6;
+    --c2: #4B5CBF;
+    --c3: #6371BF;
+    --c4: #9CA5D9;
+    --c5: #F2F2F2;
+
+    --g1: #8b27b3;
+    --g2: #d31bb4;
+}
+
+body{
+    background: linear-gradient(
+        to right,
+        var(--c1),
+        var(--g1),
+        var(--g2),
+        var(--g1),
+        var(--c1)
+    );
+    background-size: 200%;
+    overflow: hidden;
+    height: 100vh;
+    margin: 0;
+    animation: background-pan 10s linear infinite;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+#logo-root{
+    width: 45px;
+    height: 45px;
+}
+
+#kunum-title{
+    font-family: "Montserrat";
+    font-size: 30px;
+    margin-left: 10px;
+}
+
+#socials{
+    width: 20vw;
+    display: flex;
+    justify-content: space-around;
+    pointer-events: all;
+}
+
+#nav-gap{
+    width: 20vw;
+}
+
+#main-title{
+    color: white;
+    font-family: "Roboto";
+    font-size: 2.5rem;
+    width: 40vw;
+    font-weight: 500;
+    margin: 0;
+}
+
+#main-subtitle{
+    color: white;
+    font-size: 1.5rem;
+    font-family: "Open Sans";
+    font-weight: 300;
+    margin: 0;
+}
+
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding-top: 2vmin;
+    padding-left: 10vmin;
+    width: 100vw
+}
+
+#main{
+    pointer-events: all;
+    display: flex;
+    flex-direction: column;
+    height: 75vh;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+}
+
+#maincard{
+    display: flex;
+    width: 90vw;
+}
+
+#titles{
+    width: 188vw;
+}
+
+#buttons{
+    width: 90vw;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 1vmin;
+}
+
+#side-text{
+    color: white;
+    font-size: 1rem;
+    font-family: "Open Sans";
+    font-weight: 300;
+    margin: 0;
+}
+
+#sites{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+#sites-div{
+    display: flex;
+    flex-direction: column;
+}
+
+.site{
+    width: 80px;
+    height: 80px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    transition: 0.2s ease-in-out;
+}
+
+.site:hover{
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.cta-buttons{
+    height: 2rem;
+    border-radius: 10px;
+    border: 0;
+    font-family: "Roboto";
+    font-size: 1.4rem;
+    margin-top: 1vmin;
+    font-weight: 600;
+    padding-left: 5vmin;
+    padding-right: 5vmin;
+    transition: 0.3s ease-in-out;
+}
+
+.cta-buttons:hover{
+    background-color: var(--c1) !important;
+}
+
+#saiba-mais{
+    background-color: var(--c3);
+    color: white;
+}
+
+#entre-em-contato{
+    background-color: var(--c2);
+    color: white;
+}
+
+.service-card{
+    background-color: var(--c4);
+    border-radius: 15px;
+    aspect-ratio: 1/1.7;
+    width: 45vmin;
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.5) 0px 8px 20px 3px;
+    transition: transform 500ms ease;
+}
+
+.service-card::before{
+    background: linear-gradient(
+        130deg,
+        transparent 0 33%,
+        var(--c1) 66%, 
+        var(--g1) 83.5%,
+        var(--g2) 100%
+    );
+    background-position: 0% 0%;
+    background-size: 300% 300%;
+    content: "";
+    position: absolute;
+    aspect-ratio: 1/1.7;
+    width: 45vmin;
+    border-radius: 15px;
+    transition: background-position 500ms ease;
+    z-index: 1;
+}
+
+#service-cards{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    align-items: center;
+    align-content: center;
+    justify-content: space-evenly;
+    background-color: var(--c4);
+    margin-top: 10vh;
+    box-shadow: rgb(0 0 0 / 50%) 0px -8px 20px 3px;
+    height: 100vh;
+    justify-items: center;
+}
+
+#pacotes{
+    background-color: var(--c4);
+    margin-top: -10vh;
+}
+
+.service-card img{
+    width: auto;
+    height: 50%;
+}
+
+.service-content{
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(
+        rgba(78, 78, 78, 0.425) 8%,
+        transparent 8%
+    );
+    background-position: 0% 0%;
+    background-size: 2vmin 2vmin;
+    transition: background-position 500ms ease;
+
+    display: flex;
+    justify-content: center;
+    align-content: center;   
+}
+
+.service-desc{
+    display: none;
+    opacity: 0;
+    transition: 750ms ease;
+}
+
+.service-card:hover{
+    transform: scale(1.08, 1.03);
+}
+
+.service-card:hover > .service-content{
+    background-position: -10% 0%;
+    z-index: 2;
+    position: absolute;    
+    background: radial-gradient( white 8%, transparent 8% );
+    background-size: 2vmin 2vmin;
+}
+
+.service-card:hover > .service-content > img {
+    display: none;
+}
+
+.service-card:hover > .service-content > .service-desc{
+    display: block !important;
+    opacity: 1;
+}
+
+.service-card:hover::before{
+    background-position: 100% 100%;
+}
+
+.card-title{
+    color: white;
+    font-family: "Roboto";
+    font-size: 1.35rem;
+    font-weight: 800;
+    margin: 0;
+    margin-top: 2vmin;
+    text-align: center;
+}
+
+.service-desc > ul > li{
+    color: white;
+    font-family: sans-serif;
+    margin-top: 1vmin;
+}
+
+#section-title{
+    color: var(--c1);
+    font-family: "Roboto";
+    font-size: 2rem;
+    font-weight: 800;
+    padding-left: 6%;
+    padding-top: 100px;
+}
+
+#packets{
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    align-items: center;
+}
+
+.pacote{
+    border-radius: 30px;
+    border: solid var(--c1);
+    aspect-ratio: 1/0.9;
+    width: 95vw;
+    margin-top: 5vmin;
+}
+
+.pacote-title{
+    color: var(--c1);
+    font-family: "Roboto";
+    font-size: 1.35rem;
+    font-weight: 800;
+    margin: 0;
+    margin-top: 2vmin;
+    text-align: center;
+}
+
+.pacote ul li{
+    color: var(--c1);
+    font-family: sans-serif;
+    margin-top: 1vmin;
+    font-size: 1.25rem;
+}
+
+#contact-title{
+    font-family: 'Caveat'; 
+    font-size: 4rem;
+}
+
+#contactinfo{
+    background-color: var(--c4);
+    margin-top: -5vh;
+    padding-top: 5vh;
+}
+
+.info{
+    color: var(--c1);
+    font-family: "Roboto";
+    font-size: 2rem;
+    font-weight: 800;
+    margin: 0;
+    margin-top: 2vmin;
+    text-align: center;
+}
+
+body.toggled{
+    animation: none;
+}
+
+body.toggled > #root-text > #beginning-title {
+    opacity: 0;
+}
+
+body.toggled > #root-text > #beginning-subtitle {
+    opacity: 0 !important;
+}
+
+body.toggled > #root{
+    opacity: 1;
+}
+
+#beginning-title{
+    color: white;
+    font-family: "Rubik", sans-serif;
+    font-size: 9vw;
+    margin: 0px;
+    text-align: center;
+    pointer-events: none;
+    transition: opacity 1200ms ease;
+    width: 90vw;
+    z-index: 3;
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#beginning-subtitle{
+    color: white;
+    font-family: "Rubik", sans-serif;
+    font-size: 6vw;
+    margin: 0px;
+    text-align: center;
+    pointer-events: none;
+    transition: opacity 1200ms ease;
+    transition: 2000ms ease;
+    width: 90vw;
+    z-index: 3;
+    left: 50%;
+    position: absolute;
+    top: 65%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    font-weight: 100;
+    margin-top: 10%;
+}
+
+#root-tiles{
+    height: calc(100vh - 1px);
+    width: calc(100vw - 1px);
+
+    display: grid;
+
+    position: relative;
+    z-index: 2;
+
+    grid-template-columns: repeat(var(--columns), 1fr);
+    grid-template-rows: repeat(var(--rows), 1fr);
+}
+
+#root{
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    height: 100vh;
+    width: 100vw;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 1200ms ease;
+    z-index: 1;
+}
+
+.tile{
+    cursor: pointer;
+    position: relative;
+}
+
+.tile:hover::before{
+    background-color: rgb(30,30,30);
+}
+
+.tile:before{
+    background-color: rgb(20,20,20);
+    content: "";
+    position: absolute;
+    inset: 0.5px;
+}
+
+@keyframes background-pan {
+    from{
+        background-position: 0% center;
+    }
+    to{
+        background-position: -200% center;
+    }
+}
+
+h1{
+    color: white;
+    font-family: "Rubik", sans-serif;
+    font-size: 1.7vw;
+    margin: 0px;
+    text-align: center;  
+}
